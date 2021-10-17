@@ -24,12 +24,11 @@ module.exports = class Queue {
   constructor() {
     this.first = null;
     this.last = null;
-    this.size = 0;
   }
   
 
   getUnderlyingList() {
-    return ;
+    return this.first;
   }
 
   enqueue(value) {
@@ -42,7 +41,6 @@ module.exports = class Queue {
       this.last.next = newNode;
       this.last = newNode;
     }
-    this.size++;
   }
 
   dequeue() {
@@ -53,7 +51,6 @@ module.exports = class Queue {
     }
 
     this.first = this.first.next;
-    this.size--;
 
     return current.value;
   }
